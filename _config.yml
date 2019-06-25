@@ -1,0 +1,65 @@
+# Site setings
+name: "Lumberjack Dev"
+description: ""
+meta_description: ""
+logo:
+# Author image is used in site sidebar and greetings in the home page hero text
+author:
+  image: "authorimage.jpg"
+  greetings: "Hi! My name is Paul, aka the Lumberjack Dev. Welcome to my blog!"
+favicon: "assets/images/favicon-circle.ico"
+baseurl:
+production_url: https://lumberjackdev.com/
+disqus:
+mailchimp_url:
+# Add your GA Tracking Id
+ga_analytics:
+
+# Contact form setings
+email: lumberjackdev@outlook.com
+contact_page_description: "Leave a message here and I'll get back to you as soon as I can."
+thankyou_page_description: "Your message has been successfully sent."
+
+# Social links
+twitter: "paulaly3"
+facebook:
+github: "maly7"
+codepen:
+dribbble:
+medium:
+instagram:
+pinterest:
+linkedin: "maly7"
+producthunt:
+quora:
+
+# Navigation
+navigation:
+  - text: Home
+    url: /
+  - text: About
+    url: /about
+  - text: Contact Me
+    url: /contact
+
+# Required Plugins
+plugins_dir:
+  - jekyll-paginate
+  - jekyll-tagsgenerator
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Pagination
+paginate: 5
+paginate_path: /page:num/
+
+# Permalinks
+permalink: /:title
+
+# Other
+markdown: kramdown
+
+# Sass
+sass:
+  sass_dir: _sass
+  style: compressed
