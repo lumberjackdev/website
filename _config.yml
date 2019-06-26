@@ -6,8 +6,8 @@ logo:
 # Author image is used in site sidebar and greetings in the home page hero text
 author:
   image: "authorimage.jpg"
-  greetings: "Hi! My name is Paul, aka the Lumberjack Dev. Welcome to my blog!"
-favicon: "assets/images/favicon-circle.ico"
+  greetings: "Welcome to the Lumberjack Dev's Blog!"
+favicon: "favicon-circle.ico"
 baseurl:
 production_url: https://lumberjackdev.com/
 disqus:
