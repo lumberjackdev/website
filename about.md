@@ -1,8 +1,10 @@
 ---
 layout: page
 title: About
-featured_image: /assets/images/pages/about.jpg
 ---
+
+![A Picture of Me](/assets/images/pages/about.jpg){: .image-right}
+My name is Paul Aly. I'm a software developer, mentor, and all around tech enthusiast. 
 
 ### About Me
 - name

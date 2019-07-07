@@ -411,6 +411,14 @@ img {
   text-align: left;
 }
 
+.image-right {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  float: right;
+  max-width: 50%;
+}
+
 /* Text meant only for screen readers */
 .screen-reader-text,
 .site-logo + .site-identity .site-title,

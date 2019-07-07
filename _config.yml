@@ -16,7 +16,7 @@ mailchimp_url:
 ga_analytics:
 
 # Contact form setings
-email: lumberjackdev@outlook.com
+email: paul@lumberjackdev.com
 contact_page_description: "Leave a message here and I'll get back to you as soon as I can."
 thankyou_page_description: "Your message has been successfully sent."
 
