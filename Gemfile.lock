@@ -34,6 +34,8 @@ GEM
       jekyll (~> 3.3)
     jekyll-sitemap (1.2.0)
       jekyll (~> 3.3)
+    jekyll-stickyposts (1.2.2)
+      jekyll (~> 3.0)
     jekyll-tagsgenerator (0.0.2)
     jekyll-watch (2.1.2)
       listen (~> 3.0)
@@ -67,6 +69,7 @@ DEPENDENCIES
   jekyll-paginate
   jekyll-seo-tag
   jekyll-sitemap
+  jekyll-stickyposts
   jekyll-tagsgenerator
   tzinfo-data
 
