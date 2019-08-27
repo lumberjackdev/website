@@ -1,4 +1,4 @@
-# Site setings
+# Site settings
 name: "Lumberjack Dev"
 description: ""
 meta_description: ""
@@ -13,9 +13,9 @@ production_url: https://lumberjackdev.com/
 disqus:
 mailchimp_url:
 # Add your GA Tracking Id
-ga_analytics:
+ga_analytics: UA-146611497-1
 
-# Contact form setings
+# Contact form settings
 email: paul@lumberjackdev.com
 contact_page_description: "Leave a message here and I'll get back to you as soon as I can."
 thankyou_page_description: "Your message has been successfully sent."
