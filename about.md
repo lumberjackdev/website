@@ -4,7 +4,7 @@ title: The Dev Behind the Beard
 ---
 
 ![A Picture of Me (and my beard)](/assets/images/pages/about.jpg){: .image-right}
-My name is Paul Aly. I'm a software developer, mentor, and all around tech enthusiast. I currently work at BTI360, a mid-sized software firm headquartered in Ashburn, Virginia, **however this blog, its contents, and opinions are my own**. 
+My name is Paul Aly. I'm a software developer, mentor, and all around tech enthusiast. I'm a Senior Software Engineer at Pivotal Labs in Washington, DC. **However this blog, its contents, and opinions are my own**. 
 
 Continuous learning is one of my passions, and I thought this blog would be a great way I could do that while also sharing my experiences with others. I created LumberjackDev with a few goals in mind:
 1. Help others learn as they begin their software development careers
@@ -16,6 +16,8 @@ Outside of software development and growing my beard, my interests include readi
 
 #### Background
 In my career, I've worked primarily as a Java developer specializing in the Spring ecosystem. However, I do like to view myself as a generalist when it comes to technologies. Most of the projects I have worked on have been building RESTful APIs. Lately, I've been really into building more powerful APIs using [HATEOAS](https://en.wikipedia.org/wiki/HATEOAS). 
+
+Before starting at Pivotal Labs, I worked at BTI360, a mid-sized software development firm headquartered in Ashburn, VA. Here I was able to build a strong foundation in enterprise systems while learning a lot from my awesome peers. I worked on a variety of projects, teams, and technologies. This experience really helped grow appreciation for a variety of technologies and develop my passion for learning. 
 
 As far as education goes, I graduated from Virginia Tech with a Bachelor's degree in Computer Science. More recently I completed my Master's in Computer Science from John Hopkins.
 
