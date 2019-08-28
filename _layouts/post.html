@@ -27,7 +27,7 @@ post_class: post-template
             </header><!-- .post-header -->
 
             {% if page.featured_image %}
-            {% unless !page.exclude_image %}
+            {% unless page.exclude_image %}
             <div class="post-thumbnail">
                 <img src="{{ site.baseurl }}{{ page.featured_image }}" alt="{{ page.title }}">
             </div>
