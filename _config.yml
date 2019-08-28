@@ -65,4 +65,9 @@ sass:
   style: compressed
 
 # Exclusions
-exclude: docker-compose.yml
+exclude: 
+  - docker-compose.yml
+  - style-guide.md
+  - README.md
+  - Gemfile
+  - Gemfile.lock
