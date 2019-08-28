@@ -63,3 +63,11 @@ markdown: kramdown
 sass:
   sass_dir: _sass
   style: compressed
+
+# Exclusions
+exclude: 
+  - docker-compose.yml
+  - style-guide.md
+  - README.md
+  - Gemfile
+  - Gemfile.lock
