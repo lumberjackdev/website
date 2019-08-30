@@ -4,7 +4,7 @@ title: The Dev Behind the Beard
 ---
 
 ![A Picture of Me (and my beard)](/assets/images/pages/about.jpg){: .image-right}
-My name is Paul Aly. I'm a software developer, mentor, and all around tech enthusiast. I'm a Senior Software Engineer at Pivotal Labs in Washington, DC. **However this blog, its contents, and opinions are my own**. 
+My name is Paul Aly. I'm a software developer, mentor, and all around tech enthusiast. I'm currently a Software Engineer at Pivotal Labs in Washington, DC. **However this blog, its contents, and opinions are my own**. 
 
 Continuous learning is one of my passions, and I thought this blog would be a great way I could do that while also sharing my experiences with others. I created LumberjackDev with a few goals in mind:
 1. Help others learn as they begin their software development careers
