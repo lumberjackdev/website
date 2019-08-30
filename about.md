@@ -19,7 +19,7 @@ In my career, I've worked primarily as a Java developer specializing in the Spri
 
 Before starting at Pivotal Labs, I worked at BTI360, a mid-sized software development firm headquartered in Ashburn, VA. Here I was able to build a strong foundation in enterprise systems while learning a lot from my awesome peers. I worked on a variety of projects, teams, and technologies. This experience really helped grow appreciation for a variety of technologies and develop my passion for learning. 
 
-As far as education goes, I graduated from Virginia Tech with a Bachelor's degree in Computer Science. More recently I completed my Master's in Computer Science from John Hopkins.
+As far as education goes, I graduated from Virginia Tech with a Bachelor's degree in Computer Science. More recently I completed my Master's in Computer Science from Johns Hopkins.
 
 #### The Beard
 For those curious, the beard has been going strong since June 2018. There are currently no plans to limit its growth, so it will keep growing for the forseeable future. 
