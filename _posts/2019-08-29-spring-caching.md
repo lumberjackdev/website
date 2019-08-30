@@ -54,7 +54,7 @@ By including this starter, Spring Boot will go ahead and configure all of the ne
 }
 ```
 
-Unfortunately, this means that Spring Boot won't be autoconfiguring our RedisCacheManager bean for us since it already sees a Bean of type `CacheManager` from the Ehcache/JChache configuration. 
+Unfortunately, this means that Spring Boot won't be autoconfiguring our RedisCacheManager bean for us since it already sees a Bean of type `CacheManager` from the Ehcache/JCache configuration. 
 
 ### The Solution
 So how do we fix this? Well this is one of those cases where you need to take over the configuration from Spring Boot. To do this we'll create a more complex `CacheConfig` class that declares two `CacheManager` Beans:
