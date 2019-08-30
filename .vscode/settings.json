@@ -5,6 +5,7 @@
         "HATEOAS",
         "Sanderson",
         "activiti",
-        "alongs"
+        "alongs",
+        "autoconfiguring"
     ]
 }
