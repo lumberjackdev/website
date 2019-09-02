@@ -22,4 +22,4 @@ Before starting at Pivotal Labs, I worked at BTI360, a mid-sized software develo
 As far as education goes, I graduated from Virginia Tech with a Bachelor's degree in Computer Science. More recently I completed my Master's in Computer Science from Johns Hopkins.
 
 #### The Beard
-For those curious, the beard has been going strong since June 2018. There are currently no plans to limit its growth, so it will keep growing for the forseeable future. Maybe once it reach extreme lengths (around sleeve length) will I consider trimming it back, or maybe getting longer sleeves. 
+For those curious, the beard has been going strong since June 2018. There are currently no plans to limit its growth, so it will keep growing for the forseeable future.
