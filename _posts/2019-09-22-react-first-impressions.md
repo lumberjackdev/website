@@ -3,6 +3,7 @@ layout: post
 title: "Learning React: First Impressions"
 tags: [learning, javascript, react]
 summary: Reacting to React
+published: false
 ---
 
 Recently my adventure into learning new technologies brought me into the world of [React](https://reactjs.org/). For those who know me, this is way outside of my technology comfort zone. I haven't touched a frontend JavaScript framework since AngularJS (no, that's not a typo. It was way before the JS was dropped from the name). Most of my impressions are based on the [tutorial](https://reactjs.org/tutorial/tutorial.html) and reading a few blog posts. 
@@ -29,11 +30,20 @@ This was a post about React though, not about how new JavaScript feels to me. So
 Components are such a big part of React because they essentially let you create custom html elements in your application. React provides [lifecycle methods](https://reactjs.org/docs/react-component.html#commonly-used-lifecycle-methods) that allow you to hook into React's lifecycle for the component in order to perform custom actions. Two key pieces of Components that stood out to me are JSX and State.
 
 ### JSX
+I can't talk about Components without getting into [JSX](https://reactjs.org/docs/introducing-jsx.html). When I first saw JSX in the `render()` function of a Component I was admittedly not a fan. I had some flashbacks to JSPs with Java which weren't pleasant. But the more I used them and iterated my way through the tutorial, they started to feel more natural. I appreciated Components allow you to tie together state and display together in a way that makes sense.  
 
-- Seems weird at first
-- It grew on me because it's easier to keep everything together
-- The more I used it, the more natural it felt
-- Function components are neat
+Here's an example `render()` function to illustrate JSX:
+<pre><code class="language-jsx">render() {
+    return (
+      <button
+        className="square"
+        onClick={() => this.props.onClick()}
+      >
+        {this.props.value}
+      </button>
+    );
+  }</code></pre>
+As you can see you have classic html elements (you can also reference other components) embedded with JavaScript (denoted inside of `{}` blocks). It makes it pretty easy to construct multiple objects using loops or other array functions like `map`.
 
 ### State
 If you ask anyone, managing application state is hard. Really hard. **Insert a bunch of links in this section**
