@@ -41,7 +41,7 @@ Now that we've got ehcache configured, let's set up redis. Like before, we'll st
 
 By including this starter, Spring Boot will go ahead and configure all of the necessary components in order to use redis. With our application in this state, if we `bootRun` and check out the auto-configuration report (http://localhost:8080/actuator/conditions) we'll see something like this:
 
-```
+<pre><code class="language-javascript">
 {
   "RedisCacheConfiguration": {
     "notMatched": [
@@ -52,7 +52,7 @@ By including this starter, Spring Boot will go ahead and configure all of the ne
     ]
   }
 }
-```
+</code></pre>
 
 Unfortunately, this means that Spring Boot won't be autoconfiguring our RedisCacheManager bean for us since it already sees a Bean of type `CacheManager` from the Ehcache/JCache configuration. 
 
