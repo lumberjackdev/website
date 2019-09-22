@@ -2,23 +2,34 @@
 layout: post
 title: "Learning React: First Impressions"
 tags: [learning, javascript, react]
-summary: First Impressions of React
-published: false
+summary: Reacting to React
 ---
 
 Recently my adventure into learning new technologies brought me into the world of [React](https://reactjs.org/). For those who know me, this is way outside of my technology comfort zone. I haven't touched a frontend JavaScript framework since AngularJS (no, that's not a typo. It was way before the JS was dropped from the name). Most of my impressions are based on the [tutorial](https://reactjs.org/tutorial/tutorial.html) and reading a few blog posts. 
 
 ### New JavaScript Features
-- Feels like learning a new language because so much has changed
-- Can be hard to distinguish between what's React and what's a new JavaScript feature
-- [Link](https://benmccormick.org/2015/09/14/es5-es6-es2016-es-next-whats-going-on-with-javascript-versioning) to an article explaining all the different types of JS
-- List some cool features
+As I mentioned earlier, it's been awhile since I last explored the JavaScript ecosystem. So one of the first things I noticed was that there are a lot of new features in the language. At this point, it felt fairly similar to learning an entirely new language. 
+
+One of the new features I really enjoyed was the arrow function syntax. If you've been living under a rock like me, then here's an example so you know what I mean:
+<pre><code class="language-javascript">// Traditional function syntax
+elements.map(function(element) {
+  return element.length;
+});
+
+// New arrow function syntax
+elements.map(element => element.length);
+</code></pre>
+I really appreciate arrow functions because they're more concise and familiar. They also remind me of anonymous functions (or lambdas) in languages like Kotlin or in Java which makes me feel more at home.  
+
+With all of the features I noticed, I eventually went down the path of investigating the different versions of JavaScript. It quickly became apparent that to someone relatively new to the ecosystem that it can be pretty confusing. Luckily I came across an [article](https://benmccormick.org/2015/09/14/es5-es6-es2016-es-next-whats-going-on-with-javascript-versioning) that explains the versioning. If you're as confused as I was, then I highly recommend giving it a read. 
 
 ### Components
-- Components are the key part of React
-- Seems like most of the time will be spent writing components
+This was a post about React though, not about how new JavaScript feels to me. So let's talk about [React Components](https://reactjs.org/docs/react-component.html). From the tutorial and other examples I've seen, I got the impression that Components are the biggest part of React. It seems like most of the time writing application with React will be spent creating custom Components. 
+
+Components are such a big part of React because they essentially let you create custom html elements in your application. React provides [lifecycle methods](https://reactjs.org/docs/react-component.html#commonly-used-lifecycle-methods) that allow you to hook into React's lifecycle for the component in order to perform custom actions. Two key pieces of Components that stood out to me are JSX and State.
 
 ### JSX
+
 - Seems weird at first
 - It grew on me because it's easier to keep everything together
 - The more I used it, the more natural it felt

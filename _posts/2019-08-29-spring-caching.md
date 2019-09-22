@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How To: Spring Caching with Two Cache Providers"
-tags: [how-to, spring, spring-boot, caching]
+tags: [how-to, spring]
 summary: "Learn how to setup Spring Caching with two separate cache providers (redis and ehcache)"
 ---
 
