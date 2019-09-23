@@ -24,7 +24,7 @@ jobs:
       with:
         ref: master
     - name: push
-      uses: github-actions-x/commit@v2
+      uses: github-actions-x/commit@v2.0
       with:
         github-token: ${{ secrets.ACCESS_TOKEN }}
         push-branch: 'gh-pages'
