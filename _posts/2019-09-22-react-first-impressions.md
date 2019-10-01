@@ -52,7 +52,7 @@ In React, every Component has its own state that's either managed by itself or i
 ### What's Next
 All in all, I had fun beginning my way back into frontend development. As I worked through the tutorial I realized I was having fun and wanted to go more in depth. That's as a sure sign for me that I'm going to enjoy React. It's a similar feeling when I'm learning any technology that I enjoy, so there will definitely be future posts about it.
 
-One of the import parts of React that I didn't get into was [Hooks](https://reactjs.org/docs/hooks-intro.html). I feel like there's so much to talk about with Hooks, that I'll probably right a follow on post about them. 
+One of the import parts of React that I didn't get into was [Hooks](https://reactjs.org/docs/hooks-intro.html). I feel like there's so much to talk about with Hooks, that I'll probably write a follow on post about them. 
 
 I talked briefly about some of the new JavaScript features I enjoyed, so I think it's worth mentioning that I'll most likely go into TypeScript from here. I have a hunch that the type safety and other features of the language will feel more like home for me. 
 
