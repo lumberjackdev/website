@@ -17,12 +17,19 @@ Before we get into the actual code, let's talk a little bit more about what SSO 
 - Why they're a good solution
 
 ### Steps
+Spring Boot provides support for [several](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-security.html#boot-features-security-oauth2-common-providers) oauth2 providers, but for the purpose of this tutorial we'll be using Google.
 
-- Get a google client id and secret:
-https://developers.google.com/identity/sign-in/web/sign-in#before_you_begin
+1. Get a Client ID and Secret:
+Before we get into the code, we'll need to register our application with Google. We can do that [here](https://developers.google.com/identity/sign-in/web/sign-in#before_you_begin). For the application name you can provide what you'd like. One thing to remember, however, is that the redirect uri should be `http://localhost:8080/login/oauth2/code/google`. In a deployed environment you'd need to do something besides localhost, but the rest of the uri would look the same. Once you've filled everything out, you'll be provided a client ID and secret, this is the only time you'll be given them so either copy the values somewhere else or download the provided file. 
 
-- Setup the dependencies
--> Include gradle snippet
+1. Dependencies
+In order to get this sample working, we'll need to setup the dependencies:
+
+<pre><code style="language-kotlin">implementation("org.springframework.boot:spring-boot-starter-web")
+implementation("org.springframework.boot:spring-boot-starter-actuator")
+implementation("org.springframework.boot:spring-boot-starter-oauth2-client")
+implementation("org.springframework.boot:spring-boot-starter-security")
+</pre></code>
 
 - Add yaml properties
 -> Include snippet with obscuring clientId and Secret
