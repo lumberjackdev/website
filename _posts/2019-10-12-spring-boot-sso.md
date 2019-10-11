@@ -29,8 +29,23 @@ In order to get this sample working, we'll need to setup the dependencies:
 implementation("org.springframework.boot:spring-boot-starter-actuator")
 implementation("org.springframework.boot:spring-boot-starter-oauth2-client")
 implementation("org.springframework.boot:spring-boot-starter-security")
-</pre></code>
+</code></pre>
 
+Here we're adding the web, actuator, security, and oauth2 client starters. This will give the application everything we need to get going.
+
+1. Configure the Oauth2 Client
+Using the client ID and secret from earlier, we'll next configure the client in our application configuration
+<pre><code style="language-yaml"># application.yml
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            clientId: ${CLIENT_ID:}
+            clientSecret: ${CLIENT_SECRET:}
+            redirectUri: 'http://localhost:8080/login/oauth2/code/google'
+</code></pre>
 - Add yaml properties
 -> Include snippet with obscuring clientId and Secret
 
@@ -47,4 +62,4 @@ implementation("org.springframework.boot:spring-boot-starter-security")
 ### What's next?
 I know not every team has the luxury of using an existing SSO provider like Google. So one of the next tutorials I'll be doing will be for setting up our own SSO provider using Spring Security's [Authorization Server](https://docs.spring.io/spring-security-oauth2-boot/docs/current/reference/html/boot-features-security-oauth2-authorization-server.html). That way your team or organization can setup their own provider for use across multiple applications.
 
-I hope this tutorial can help you and your team, thanks for reading!
+Check out the source code [here](https://github.com/lumberjackdev/spring-boot-google-sso) if you're interested! I hope this tutorial can help you and your team, thanks for reading!
