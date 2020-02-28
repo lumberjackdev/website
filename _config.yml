@@ -43,7 +43,7 @@ navigation:
     url: /contact
 
 # Required Plugins
-plugins_dir:
+plugins:
   - jekyll-paginate
   - jekyll-tagsgenerator
   - jekyll-seo-tag
@@ -65,7 +65,7 @@ sass:
   style: compressed
 
 # Exclusions
-exclude: 
+exclude:
   - docker-compose.yml
   - README.md
   - Gemfile
