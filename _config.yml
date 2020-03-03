@@ -41,6 +41,8 @@ navigation:
     url: /about
   - text: Contact Me
     url: /contact
+  - text: Search
+    url: /search
 
 # Required Plugins
 plugins:
