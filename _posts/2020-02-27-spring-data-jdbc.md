@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Getting Started with Spring Data JDBC"
+title: "Introduction to Spring Data JDBC"
 date: 2020-02-27 10:04
-tags: [spring, spring-data, jdbc]
-summary: A guide to getting started with Spring Data JDBC
+tags: [spring, spring-data, jdbc, how-to]
+summary: An introductory guide to getting started with Spring Data JDBC
 ---
 
 In 2018, Spring Data JDBC was [announced](https://spring.io/blog/2018/09/17/introducing-spring-data-jdbc). The purpose was to provide developers with a simpler alternative to JPA while still following the Spring Data paradigm. If you'd like to know more about the motivations behind the project, check out the [reference documentation](https://docs.spring.io/spring-data/jdbc/docs/current/reference/html/#jdbc.why).
