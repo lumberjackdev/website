@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Deploying Spring Boot Apps to Kubernetes 
-| Part 1: Containers"
+| Part 1: Building Containers"
 date: 2020-04-19 08:50
 tags: [spring-boot, kubernetes, docker, how-to]
 summary: In this first post focused on deploying spring boot application to kubernetes, we'll take a look at containerizing spring boot applications.
