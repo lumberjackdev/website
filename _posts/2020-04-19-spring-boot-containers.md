@@ -287,3 +287,5 @@ Since we mapped our local port `8080` to the same port on the container (`-p 808
 
 ### Summing it Up
 In this post, we covered some basics about kubernetes and docker containers. We then built a simple Spring Boot application and packaged it into a docker container through gradle. In the next post, we'll take the docker container we built and deploy it to a local kubernetes cluster. Thanks for reading!
+
+Continue on in [Part 2](2020-05-09-simple-spring-boot-on-k8s.md)
