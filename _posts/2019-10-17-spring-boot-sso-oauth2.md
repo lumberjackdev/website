@@ -56,7 +56,7 @@ class SecurityConfig : WebSecurityConfigurerAdapter() {
         http!!.authorizeRequests()
             .anyRequest().authenticated()
             .and()
-            .oauth2Login();
+            .oauth2Login()
     }
 }
 </code></pre>
