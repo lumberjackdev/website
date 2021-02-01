@@ -12,7 +12,7 @@ Continuous learning is one of my passions, and I thought this blog would be a gr
 1. Record solutions to (un)common problems
 
 #### Interests
-Outside of software development and growing my beard, my interests include reading fantasy novels (I'm a huge fan of Steven Erikson and Brandon Sanderson), coffee, weightlifting, and watching Good Mythical Morning.
+Outside of software development and growing my beard, my interests include reading fantasy novels (I'm a huge fan of Steven Erikson and Brandon Sanderson), coffee, weightlifting, watching Good Mythical Morning, and caring for my dog Azalea.
 
 #### Background
 Throughout my career, I've worked on a variety of software products. I like to view myself as a generalist when it comes to technologies - if I don't know a certain language or stack to solve a problem then I'll enjoy going out and learning it. I have a passion for building quality products while enabling others learning alongside me. 
