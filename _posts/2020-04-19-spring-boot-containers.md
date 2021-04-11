@@ -22,7 +22,7 @@ In this guide I won't focus too much on getting your local environment setup bec
 * [Docker with WSL2](https://docs.docker.com/docker-for-windows/wsl-tech-preview/)
 * [Install Docker Desktop for Mac](https://docs.docker.com/docker-for-mac/install/)
 * [Enable Kubernetes Support in Docker Desktop for Mac](https://docs.docker.com/docker-for-mac/#kubernetes)
-* [minikube](https://minikube.sigs.k8s.io/docs/start/) - I haven't used minikube for awhile so your results may vary with this option
+* [minikube](https://minikube.sigs.k8s.io/docs/start/) 
 
 ### What is Kubernetes?
 The [official](https://kubernetes.io/) definition of kubernetes is "Kubernetes (K8s) is an open-source system for automating deployment, scaling, and management of containerized applications." There's a lot going on there, but I like to think of kubernetes as a platform for deploying and running containers. Most of the features provided by kubernetes encourage [cloud native practices](https://tanzu.vmware.com/cloud-native) which draws the attention of many developers and organizations. If you'd like a more technical overview of what kubernetes is, then check out the [official docs](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/).
