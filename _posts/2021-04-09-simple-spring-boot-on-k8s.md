@@ -118,7 +118,7 @@ And there should be an output similar to:
 And now you have access the application from within the cluster. When you're done, just type `exit` and the buxybox container and its Pod will be terminated. Containers such as this are useful when debugging containers running in kubernetes.
 
 ### Recap
-In this post, you should have run a Docker image for a Spring Boot Application in a kubernetes Pod. We then saw what the Pod definition looked like. Finally, we ran a busybox container in a different Pod that could be used to access the application through the actuator. Thanks for reading!
+In this post, you should have run a Docker image for a Spring Boot Application in a kubernetes Pod. We then saw what the Pod definition looked like. Finally, we ran a busybox container in a different Pod that could be used to access the application through the actuator. As always, the sample code can be found on [github](https://github.com/lumberjackdev/springboot-on-k8s/tree/part-two). Thanks for reading!
 
 ### Other Useful Commands
 Here are some other useful kubectl commands to try out:
