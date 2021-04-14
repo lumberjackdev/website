@@ -7,6 +7,8 @@ tags: [spring-boot, kubernetes, docker, how-to]
 summary: In this second post, we'll take the docker container we built in the previous post and deploy it to a local kubernetes cluster.
 featured_image_thumbnail:
 featured_image: /assets/images/posts/2021/pods.jpg
+featured_image_href: https://unsplash.com/photos/pJJSRCARDUY
+featured_image_credit: Dale Staton
 featured: true
 ---
 

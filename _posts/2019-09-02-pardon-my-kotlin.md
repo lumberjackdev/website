@@ -5,6 +5,8 @@ tags: [general, kotlin, languages]
 summary: Ramblings about why I use different languages
 featured_image_thumbnail:
 featured_image: /assets/images/posts/2019/forrest.jpg
+featured_image_href: https://unsplash.com/photos/e6XsI7qqvAA
+featured_image_credit: Ju On
 featured: true
 ---
 

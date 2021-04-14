@@ -25,10 +25,15 @@
 .post-thumbnail {
   display: block;
   margin-bottom: 1.66667em;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
 }
 
 .post-thumbnail img {
-  width: 100%;
+  width: 80%;
 }
 
 .post-meta, .caption-text {

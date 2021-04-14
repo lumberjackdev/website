@@ -7,6 +7,8 @@ tags: [spring-boot, kubernetes, docker, how-to]
 summary: In this first post focused on deploying spring boot application to kubernetes, we'll take a look at containerizing spring boot applications.
 featured_image_thumbnail:
 featured_image: /assets/images/posts/2020/containers.jpg
+featured_image_href: https://unsplash.com/photos/PbmxouKBXG0
+featured_image_credit: Nico G
 featured: false
 ---
 Let's face it, no matter where you look in the software development world you'll find mentions of kubernetes. And there are plenty of good reasons to that. Kubernetes is really powerful and becoming many organizations' first choice of deployment platform. So as software developers we often have to take it upon ourselves to figure kubernetes out and get our applications running there. In this series I'm going to focus on simplifying that process by breaking it down into steps (and hopefully include some helpful tips along the way). As a starting point, we'll be packaging a simple Spring Boot application in a docker container. 

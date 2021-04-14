@@ -30,6 +30,7 @@ post_class: post-template
         {% unless page.exclude_image %}
         <div class="post-thumbnail">
             <img src="{{ site.baseurl }}{{ page.featured_image }}" alt="{{ page.title }}">
+            <p>Photo by <a href="{{ page.featured_image_href }}" target="_blank">{{ page.featured_image_credit }}</a></p>
         </div>
         {% endunless %}
         {% endif %}
