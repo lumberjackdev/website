@@ -9,7 +9,7 @@ featured_image_thumbnail:
 featured_image: /assets/images/posts/2021/pods.jpg
 featured_image_href: https://unsplash.com/photos/pJJSRCARDUY
 featured_image_credit: Dale Staton
-featured: true
+featured: false
 ---
 
 In [Part 1](2020-04-19-spring-boot-containers.md) we built a docker container for a basic Spring Boot application. In this post we'll be taking a look at some of the basic elements of kubernetes deployments and then see how we can run our application in a kubernetes cluster. 

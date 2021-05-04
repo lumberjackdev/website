@@ -4,7 +4,7 @@ title: "Deploying Spring Boot Apps to Kubernetes
 | Part 3: Creating a Kubernetes Deployment"
 date: 2021-04-09 12:00
 tags: [spring-boot, kubernetes, docker, how-to]
-summary: In this third post, we'll explore 
+summary: In this third post, we'll explore kubernetes Deployment
 featured_image_thumbnail:
 featured_image: /assets/images/posts/2021/deployments.jpg
 featured: true
@@ -29,6 +29,29 @@ Previously, when working with Pods we were creating and managing a kubernetes re
 Not only can you express the desired state, it can be updated through rolling out updates to Deployments. Read more about Deployments [here](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/).
 
 ### Create a Deployment
+The quickest way to create a deployment is using `kubectl`, for the demo Application we've been building we can do this with the following command:
+
+```bash
+kubectl create deployment springboot-demo --image-docker.io/library/springbooktk8s:0.0.1-SNAPSHOT
+```
+
+To check the status of the deployment run:
+
+```bash
+kubectl get deployments
+```
+
+And you should see output similar to:
+
+```bash
+NAME              READY   UP-TO-DATE   AVAILABLE   AGE
+springboot-demo   1/1     1            1           4s
+```
+
+```bash
+NAME                               READY   STATUS    RESTARTS   AGE
+springboot-demo-5797d86dfb-w8lw9   1/1     Running   0          7s
+```
 
 ### Configure Health Checks
 https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-features.html#production-ready-kubernetes-probes
