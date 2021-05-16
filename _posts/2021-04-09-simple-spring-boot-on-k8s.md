@@ -122,6 +122,8 @@ And now you have access the application from within the cluster. When you're don
 ### Recap
 In this post, you should have run a Docker image for a Spring Boot Application in a kubernetes Pod. We then saw what the Pod definition looked like. Finally, we ran a busybox container in a different Pod that could be used to access the application through the actuator. As always, the sample code can be found on [github](https://github.com/lumberjackdev/springboot-on-k8s/tree/part-two). Thanks for reading!
 
+Continue on to [Part 3](2021-05-14-spring-boot-k8s-deployment.md)
+
 ### Other Useful Commands
 Here are some other useful kubectl commands to try out:
 * `kubectl logs demo` to see the most recent logs

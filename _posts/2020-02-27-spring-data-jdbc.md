@@ -39,7 +39,7 @@ spring:
 ```
 
 ### Entity Mapping
-Now that we have the app connected to the database, let's take a look at a simple class. For this example, we'll be  using this sql table:
+Now that we have the app connected to the database, let's take a look at a sample class. For this example, we'll be  using this sql table:
 
 ```sql
 create table book (

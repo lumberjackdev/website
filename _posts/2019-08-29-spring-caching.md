@@ -24,7 +24,7 @@ Next, we'll let spring know where to find our jcache config in the application.y
     jcache:
       config: classpath:ehcache.xml</code></pre>
 
-Lastly, we'll enable caching and setup a simple class that uses our configured cache:
+Lastly, we'll enable caching and setup a small class that uses our configured cache:
 
 <pre><code class="language-kotlin">@Configuration
 @EnableCaching 
