@@ -1,0 +1,35 @@
+name: Lighthouse CI
+on:
+  push:
+    branches: [ gh-pages ]
+  pull_request:
+    branches: [ gh-pages ]
+  schedule:
+   - cron: 0 13 * * 1
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Audit URLs using Lighthouse
+        uses: treosh/lighthouse-ci-action@v7
+        with:
+          urls: |
+            https://lumberjackdev.com/welcome
+            https://lumberjackdev.com/spring-caching
+            https://lumberjackdev.com/pardon-my-kotlin
+            https://lumberjackdev.com/react-first-impressions
+            https://lumberjackdev.com/spring-boot-sso-oauth2
+            https://lumberjackdev.com/retros
+            https://lumberjackdev.com/spring-data-jdbc
+            https://lumberjackdev.com/spring-boot-containers
+            https://lumberjackdev.com/simple-spring-boot-on-k8s
+            https://lumberjackdev.com/spring-boot-k8s-deployment
+            https://lumberjackdev.com/about
+            https://lumberjackdev.com/contact
+            https://lumberjackdev.com/
+            https://lumberjackdev.com/search
+            https://lumberjackdev.com/thank-you
+            https://lumberjackdev.com/page2/
+          uploadArtifacts: true
+          temporaryPublicStorage: true
