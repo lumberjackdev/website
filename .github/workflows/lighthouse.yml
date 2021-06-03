@@ -33,3 +33,4 @@ jobs:
             https://lumberjackdev.com/page2/
           uploadArtifacts: true
           temporaryPublicStorage: true
+          configPath: '.github/lighthouse/lighthouserc.json'
