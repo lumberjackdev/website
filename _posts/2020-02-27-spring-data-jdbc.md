@@ -142,7 +142,11 @@ create table address
     zipcode varchar(255),
     primary key (id)
 );
+```
 
+And the user_account table:
+
+```sql
 create table user_account
 (
     id         varchar(36)  not null,
@@ -196,7 +200,11 @@ create table warehouse
     location varchar(255),
     primary key (id)
 );
+```
 
+And the inventory_item table:
+
+```sql
 create table inventory_item
 (
     id        varchar(36) not null,
