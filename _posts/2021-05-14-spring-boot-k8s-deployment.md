@@ -134,7 +134,7 @@ springboot-demo-5797d86dfb-sdjqh   1/1     Terminating   0          2m33s
 springboot-demo-7b9646b797-pm4d5   1/1     Running       0          8s
 ```
 
-In the case that we wanted to undo this change, we could easily undo the deployment with the following command:
+In the case that we wanted to undo this change, we could undo the deployment with the following command:
 
 
 ```bash
