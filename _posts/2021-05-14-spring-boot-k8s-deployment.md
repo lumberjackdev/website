@@ -12,7 +12,7 @@ featured_image_credit: CHUTTERSNAP
 featured: true
 ---
 
-In [Part 2](2021-04-09-simple-spring-boot-on-k8s.md) we took the docker container for a basic Spring Boot application and ran it in a kubernetes Pod. In this post we'll be taking at the next level in kubernetes concept: Deployments. At a high level, Deployments allow declarative updates to Pods by expressing desired state. In this guide you'll create a kubernetes Deployment for a Spring Boot Application, inspect the definition for the Deployment, and update the deployment. 
+In [Part 2](2021-04-09-simple-spring-boot-on-k8s.md) we took the docker container for a basic Spring Boot application and ran it in a kubernetes Pod. In this post we'll be taking at the next level in kubernetes concept: Deployments. At a high level, Deployments allow declarative updates to Pods by expressing desired state. In this guide we'll create a kubernetes Deployment for a Spring Boot Application, inspect the definition for the Deployment, and update the deployment. 
 
 ### Environment Setup
 In this guide I won't focus too much on getting your local environment setup because there are already so many helpful resources out there. During this series, I'll be using docker desktop with kubernetes support enabled. I've found it to be the easiest way to get started with kubernetes quickly on a local machine. Here are a few helpful links to get your local environment configured:
@@ -24,12 +24,12 @@ In this guide I won't focus too much on getting your local environment setup bec
 * [minikube](https://minikube.sigs.k8s.io/docs/start/) 
 
 ### Deployments
-Previously, when working with Pods we were creating and managing a kubernetes resource directly. With Deployments, you create a kubernetes [controller](https://kubernetes.io/docs/concepts/architecture/controller/) that manages other resources - in this case Pods. This is accomplished by expressing the desired state of the application. By state, think of concepts like:
+Previously, when working with Pods we were creating and managing a kubernetes resource directly. With Deployments, we create a kubernetes [controller](https://kubernetes.io/docs/concepts/architecture/controller/) that manages other resources - in this case Pods. This is accomplished by expressing the desired state of the application. By state, think of concepts like:
 * There should be a certain number of instances of an Application
 * The Application should be restarted if it fails a certain condition
 * Scale the number of instances of the Application based on certain conditions
 
-Not only can you express the desired state, it can be updated through rolling out updates to Deployments. Read more about Deployments [here](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/).
+Not only can we express the desired state, it can be updated through rolling out updates to Deployments. Read more about Deployments [here](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/).
 
 ### Creating a Deployment
 The quickest way to create a deployment is using `kubectl`, for the demo Application we've been building we can do this with the following command:
@@ -46,7 +46,7 @@ To check the status of the deployment run:
 kubectl get deployments
 ```
 
-And you should see output similar to:
+And we should see output similar to:
 
 ```bash
 NAME              READY   UP-TO-DATE   AVAILABLE   AGE
@@ -123,7 +123,7 @@ kubectl apply -f deployment.yaml --record
 ```
 
 
-{% include note.html note="the record option stores information on the Deployment object about how an update was applied. You can see this when looking up the description of a deployment." %}
+{% include note.html note="the record option stores information on the Deployment object about how an update was applied. We can see this when looking up the description of a deployment." %}
 
 
 If we check the status of the Pods during the update with `kubectl get pods`, then the output shows the Pod without a container port terminating and a new Pod is running:
@@ -142,4 +142,4 @@ kubectl rollout undo deployment springboot-demo
 ```
 
 ### Conclusion
-In this post, you created and updated a kubernetes Deployment for a small Spring Boot Application. In later posts we'll look into how this Deployment could be configured further with useful features such as liveness and readiness probes or scaling. As usual, you can find the code over on [github](https://github.com/lumberjackdev/springboot-on-k8s/tree/part-three). Thanks for reading!
+In this post, we created and updated a kubernetes Deployment for a small Spring Boot Application. In later posts we'll look into how this Deployment could be configured further with useful features such as liveness and readiness probes or scaling. As usual, the source code over can be found on [github](https://github.com/lumberjackdev/springboot-on-k8s/tree/part-three). Thanks for reading!

@@ -24,7 +24,7 @@ In this guide I won't focus too much on getting your local environment setup bec
 * [minikube](https://minikube.sigs.k8s.io/docs/start/) 
 
 ### Pods
-Pods are the most basic unit in a kubernetes cluster. They are capable of running multiple containers, but typically you'll see a one container per Pod philosophy. This makes it much easier to manage and conceptualize because you can think of them as a layer around your containers that allows kubernetes to manage a container. Kubernetes also provides networking and volume storage capabilities to Pods. The [kubernetes docs](https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/) have an in-depth overview of Pods. 
+Pods are the most basic unit in a kubernetes cluster. They are capable of running multiple containers, but typically we'll see a one container per Pod philosophy. This makes it much easier to manage and conceptualize because we can think of them as a layer around our containers that allows kubernetes to manage a container. Kubernetes also provides networking and volume storage capabilities to Pods. The [kubernetes docs](https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/) have an in-depth overview of Pods. 
 
 ### Running a Spring Boot Application in a Pod
 Now that we know a little about Pods, this next step is to get the docker image we built last time running in a Pod (if you need to rebuild the image you can do that with `./gradlew bootBuildImage`). In order to run the application, run the following command using the kubernetes command line tool - kubectl:
@@ -42,7 +42,7 @@ NAME              READY   STATUS    RESTARTS   AGE
 demo              1/1     Running   0          4s
 ```
 
-When running the cli command, kubernetes is creating a definition of a Pod for us. To take a look at that definition you can run the previous command but as a dry run and output as yaml:
+When running the cli command, kubernetes is creating a definition of a Pod for us. To take a look at that definition we can run the previous command but as a dry run and output as yaml:
 
 ```bash
 kubectl run demo --image=docker.io/library/springbooktk8s:0.0.1-SNAPSHOT --dry-run=client -o yaml
@@ -79,7 +79,7 @@ For now we can ignore the rest of the fields, we'll go into details where necess
 
 
 ### Accessing the Application
-At this point, you might be tempted to point the browser to `http://localhost:8080/actuator/health` to see the running application's health. By default, Pods and their containers will only be accessible within the cluster. To access the application, the request will need to be made within the cluster. To do this, first find the Pod's IP Address by running:
+At this point, we might be tempted to point the browser to `http://localhost:8080/actuator/health` to see the running application's health. By default, Pods and their containers will only be accessible within the cluster. To access the application, the request will need to be made within the cluster. To do this, first find the Pod's IP Address by running:
 
 ```bash
 kubect describe pod demo
@@ -117,10 +117,10 @@ And there should be an output similar to:
 {"status":"UP","groups":["liveness","readiness"]}
 ```
 
-And now you have access the application from within the cluster. When you're done, just type `exit` and the buxybox container and its Pod will be terminated. Containers such as this are useful when debugging containers running in kubernetes.
+And now we have access the application from within the cluster. When we're done, just type `exit` and the buxybox container and its Pod will be terminated. Containers such as this are useful when debugging containers running in kubernetes.
 
 ### Recap
-In this post, you should have run a Docker image for a Spring Boot Application in a kubernetes Pod. We then saw what the Pod definition looked like. Finally, we ran a busybox container in a different Pod that could be used to access the application through the actuator. As always, the sample code can be found on [github](https://github.com/lumberjackdev/springboot-on-k8s/tree/part-two). Thanks for reading!
+In this post, we have run a Docker image for a Spring Boot Application in a kubernetes Pod. We then saw what the Pod definition looked like. Finally, we ran a busybox container in a different Pod that could be used to access the application through the actuator. As always, the sample code can be found on [github](https://github.com/lumberjackdev/springboot-on-k8s/tree/part-two). Thanks for reading!
 
 Continue on to [Part 3](2021-05-14-spring-boot-k8s-deployment.md)
 
