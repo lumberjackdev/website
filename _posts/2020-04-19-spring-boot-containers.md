@@ -4,21 +4,21 @@ title: "Deploying Spring Boot Apps to Kubernetes
 | Part 1: Building Containers"
 date: 2020-04-19 08:50
 tags: [spring-boot, kubernetes, docker, how-to]
-summary: In this first post focused on deploying spring boot application to kubernetes, we'll take a look at containerizing spring boot applications.
+summary: In this first post focused on deploying spring boot application to kubernetes, we take a look at containerizing spring boot applications.
 featured_image_thumbnail:
 featured_image: /assets/images/posts/2020/containers.jpg
 featured_image_href: https://unsplash.com/photos/PbmxouKBXG0
 featured_image_credit: Nico G
 featured: false
 ---
-Let's face it, no matter where we look in the software development world we'll find mentions of kubernetes. And there are plenty of good reasons to that. Kubernetes is really powerful and becoming many organizations' first choice of deployment platform. So as software developers we often have to take it upon ourselves to figure kubernetes out and get our applications running there. In this series I'm going to focus on simplifying that process by breaking it down into steps (and hopefully include some helpful tips along the way). As a starting point, we'll be packaging a small Spring Boot application in a docker container. 
+Let's face it, no matter where we look in the software development world we find mentions of kubernetes. And there are plenty of good reasons to that. Kubernetes is really powerful and becoming many organizations' first choice of deployment platform. So as software developers we often have to take it upon ourselves to figure kubernetes out and get our applications running there. In this series I'm going to focus on simplifying that process by breaking it down into steps (and hopefully include some helpful tips along the way). As a starting point, we package a small Spring Boot application in a docker container. 
 
 _5/16/2020: Updated for release of Spring Boot 2.3_
 
 This is part one, you can find part two [here](2020-05-09-simple-spring-boot-on-k8s.md)
 
 ### Environment Setup
-In this guide I won't focus too much on getting your local environment setup because there are already so many helpful resources out there. During this series, I'll be using docker desktop with kubernetes support enabled. I've found it to be the easiest way to get started with kubernetes quickly on a local machine. Here are a few helpful links to get your local environment configured:
+In this guide I won't focus too much on getting your local environment setup because there are already so many helpful resources out there. During this series, I use docker desktop with kubernetes support enabled. I've found it to be the easiest way to get started with kubernetes quickly on a local machine. Here are a few helpful links to get your local environment configured:
 * [Install Docker Desktop for Windows](https://docs.docker.com/docker-for-windows/install/)
 * [Enable Kubernetes Support in Docker Desktop for Windows](https://docs.docker.com/docker-for-windows/#kubernetes)
 * [Docker with WSL2](https://docs.docker.com/docker-for-windows/wsl-tech-preview/)
@@ -32,16 +32,16 @@ The [official](https://kubernetes.io/) definition of kubernetes is "Kubernetes (
 ### Why Start with Containers?
 You might be wondering, "Why start with containers? All of my applications are already containerized, so show me the k8s!". If you already have all of your applications build into containers, then that's awesome! This guide _might_ not be for you. You might want to wait for part two. However, I'd encourage you to read along because I'm going to discuss some new Spring Boot features that might make that process easier. 
 
-For everyone else, containers are the natural starting point when beginning your journey into kubernetes deployments. Containers are the building blocks of kubernetes so we'll need applications packaged in containers before we can deploy to kubernetes. 
+For everyone else, containers are the natural starting point when beginning your journey into kubernetes deployments. Containers are the building blocks of kubernetes so we need applications packaged in containers before we can deploy to kubernetes. 
 
 ### So... What's a Container?
-Whether your team uses a platform such as Cloud Foundry, deploys `.war` files to tomcat, has customized machine images for your applications, or some other form of deployment you're probably not using containers. For the purpose of this guide, I'll be using the word container to reference docker containers. For anyone new to the world of docker and containers, we can think of them as self-contained packages of our application and everything it needs to run. In a traditional deployment, we might provision a server or virtual machine and then have everything we need installed on it (ie. Java, standard linux libraries, etc.). With docker containers, all of that is packaged into a docker image that we can use to run our application anywhere docker is installed. 
+Whether your team uses a platform such as Cloud Foundry, deploys `.war` files to tomcat, has customized machine images for your applications, or some other form of deployment you're probably not using containers. For the purpose of this guide, the word container references docker containers. For anyone new to the world of docker and containers, we can think of them as self-contained packages of our application and everything it needs to run. In a traditional deployment, we might provision a server or virtual machine and then have everything we need installed on it (ie. Java, standard linux libraries, etc.). With docker containers, all of that is packaged into a docker image that we can use to run our application anywhere docker is installed. 
 
 ### Containerizing a Spring Boot Application
 With all of that said, let's get started with building a containerized Spring Boot application. As usual, the source code is available on [GitHub](https://github.com/lumberjackdev/springboot-on-k8s/tree/part-one).
 
 #### Getting Started
-For now we'll be building a small Spring Boot Web App with just the actuator dependency for health checks. The dependency section will look like this:
+For now let's build a small Spring Boot Web App with the actuator dependency for health checks. The dependency section looks like this:
 
 ```groovy
 dependencies {
@@ -64,9 +64,9 @@ management:
 ```
 
 #### Building the Container Image (for Spring Boot 2.3.0.RELEASE and newer)
-With the release of Spring Boot 2.3, it was [announced](https://spring.io/blog/2020/01/27/creating-docker-images-with-spring-boot-2-3-0-m1) that there would be native support for building docker containers. The team supporting Spring Boot did some really cool stuff using buildpacks to make it possible. So in order to make our lives easier, we'll be using this method.
+With the release of Spring Boot 2.3, it was [announced](https://spring.io/blog/2020/01/27/creating-docker-images-with-spring-boot-2-3-0-m1) that there would be native support for building docker containers. The team supporting Spring Boot did some really cool stuff using buildpacks to make it possible. So in order to make our lives easier, we use this method.
 
-We'll start by using to new gradle task to build the image: 
+We start by using to new gradle task to build the image: 
 ```bash
 ./gradlew bootBuildImage
 
@@ -177,7 +177,7 @@ We can use it to now run a container:
 $ docker run -it -p 8080:8080 docker.io/library/springbooktk8s:0.0.1-SNAPSHOT
 ```
 
-And we'll see the output:
+And we see the output:
 
 ```
 Container memory limit unset. Configuring JVM for 1G container.
@@ -208,10 +208,10 @@ pace)
 
 ```
 
-Since we mapped our local port `8080` to the same port on the container (`-p 8080:8080` from the run command), you can go to the actuator endpoint in your browser at `http://localhost:8080/actuator` like you would if you were running the application normally. If you go the `/env` endpoint, you'll see some interesting information about the underlying docker container that's worth checking out. But there you have it, a successfully containerized Spring Boot application!
+Since we mapped our local port `8080` to the same port on the container (`-p 8080:8080` from the run command), you can go to the actuator endpoint in your browser at `http://localhost:8080/actuator` like you would if you were running the application normally. If you go the `/env` endpoint, you see some interesting information about the underlying docker container that's worth checking out. But there you have it, a successfully containerized Spring Boot application!
 
 #### Building the Container Image (For Older Spring Boot Versions)
-For older versions of spring boot to build the container, we _could_ compile our application to a jar, write a custom Dockerfile by hand that uses that jar, and then manually build that image from the Dockerfile. Instead we'll be using the [Docker Spring Boot Application Gradle plugin](https://bmuschko.github.io/gradle-docker-plugin/#spring_boot_application_plugin) that automates all of this for us into a gradle task. You can find the source code for this method over on [github](https://github.com/lumberjackdev/springboot-on-k8s/tree/part-one-using-gradle-plugin). First add the plugin to the buildscript:
+For older versions of spring boot to build the container, we _could_ compile our application to a jar, write a custom Dockerfile by hand that uses that jar, and then manually build that image from the Dockerfile. Instead we use the [Docker Spring Boot Application Gradle plugin](https://bmuschko.github.io/gradle-docker-plugin/#spring_boot_application_plugin) that automates all of this for us into a gradle task. You can find the source code for this method over on [github](https://github.com/lumberjackdev/springboot-on-k8s/tree/part-one-using-gradle-plugin). First add the plugin to the buildscript:
 
 ```groovy
 plugins {
@@ -242,13 +242,13 @@ ENTRYPOINT ["java", "-cp", "/app/resources:/app/classes:/app/libs/*", "com.lumbe
 EXPOSE 8080
 ```
 
-Next we'll run the container that was created:
+Next we run the container that was created:
 
 ```bash
 $ docker run -it -p 8080:8080 com.lumberjackdev/springbooktk8s:0.0.1-snapshot
 ```
 
-If like me you're using a version of Java after 8, then you'll see the following error: `Exception in thread "main" java.lang.UnsupportedClassVersionError`. This exception is due to the fact that the default base image of our docker container (the first line in the Dockerfile) uses java 8. So let's configure the gradle plugin so that our base image uses a later version of Java. For our purposes, we'll  use the base image of `adoptopenjdk:11-jre-hotspot`:
+If like me you're using a version of Java after 8, then you see the following error: `Exception in thread "main" java.lang.UnsupportedClassVersionError`. This exception is due to the fact that the default base image of our docker container (the first line in the Dockerfile) uses java 8. So let's configure the gradle plugin so that our base image uses a later version of Java. For our purposes, we use the base image of `adoptopenjdk:11-jre-hotspot`:
 
 ```groovy
 docker {
@@ -258,7 +258,7 @@ docker {
 }
 ```
 
-Now if we run our docker container, we'll see standard Spring Boot logs:
+Now if we run our docker container, we see standard Spring Boot logs:
 
 ```
   .   ____          _            __ _ _
@@ -285,9 +285,9 @@ Now if we run our docker container, we'll see standard Spring Boot logs:
 2020-04-19 20:09:15.757  INFO 1 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 34 ms
 ```
 
-Since we mapped our local port `8080` to the same port on the container (`-p 8080:8080` from the run command), we can go to the actuator endpoint in our browser at `http://localhost:8080/actuator` like we would if we were running the application normally. If we go the `/env` endpoint, we'll see some interesting information about the underlying docker container that's worth checking out. But there we have it, a successfully containerized Spring Boot application!
+Since we mapped our local port `8080` to the same port on the container (`-p 8080:8080` from the run command), we can go to the actuator endpoint in our browser at `http://localhost:8080/actuator` like we would if we were running the application normally. If we go the `/env` endpoint, we see some interesting information about the underlying docker container that's worth checking out. But there we have it, a successfully containerized Spring Boot application!
 
 ### Summing it Up
-In this post, we covered some basics about kubernetes and docker containers. We then built a small Spring Boot application and packaged it into a docker container through gradle. In the next post, we'll take the docker container we built and deploy it to a local kubernetes cluster. Thanks for reading!
+In this post, we covered some basics about kubernetes and docker containers. We then built a small Spring Boot application and packaged it into a docker container through gradle. In the next post, we take the docker container we built and deploy it to a local kubernetes cluster. Thanks for reading!
 
 Continue on in [Part 2](2020-05-09-simple-spring-boot-on-k8s.md)

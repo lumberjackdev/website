@@ -8,12 +8,12 @@ summary: An introductory guide to getting started with Spring Data JDBC
 
 In 2018, Spring Data JDBC was [announced](https://spring.io/blog/2018/09/17/introducing-spring-data-jdbc). The purpose was to provide developers with a simpler alternative to JPA while still following the Spring Data paradigm. If you'd like to know more about the motivations behind the project, check out the [reference documentation](https://docs.spring.io/spring-data/jdbc/docs/current/reference/html/#jdbc.why).
 
-In this guide I'll be stepping through some common use cases for Spring Data JDBC. It won't be an in-depth guide, but hopefully give you enough of an introduction to try it yourself. This guide will be most beneficial for those with working knowledge of Spring Data JPA. As usual, you can follow along with the source code over on [github](https://github.com/lumberjackdev/getting-started-spring-data-jdbc).
+In this guide we step through some common use cases for Spring Data JDBC. It won't be an in-depth guide, but hopefully give you enough of an introduction to try it yourself. This guide is most beneficial for those with working knowledge of Spring Data JPA. As usual, you can follow along with the source code over on [github](https://github.com/lumberjackdev/getting-started-spring-data-jdbc).
 
 _Also see the [template](https://github.com/lumberjackdev/spring-boot-java-11-postgres-template) I used for this example if you'd like to get started quickly_
 
 ### Getting Started
-For our dependencies we'll just be using data-jdbc starter, flyway to manage the schema, and the postgres driver to connect to the database.
+For our dependencies we use data-jdbc starter, flyway to manage the schema, and the postgres driver to connect to the database.
 ```groovy
 // build.gradle
 dependencies {
@@ -25,7 +25,7 @@ dependencies {
 }
 ```
 
-Next we'll need to configure the application to connect to the database:
+Next we configure the application to connect to the database:
 ```yaml
 # application.yml
 spring:
@@ -39,7 +39,7 @@ spring:
 ```
 
 ### Entity Mapping
-Now that we have the app connected to the database, let's take a look at a sample class. For this example, we'll be  using this sql table:
+Now that we have the app connected to the database, let's take a look at a sample class. For this example, we use this sql table:
 
 ```sql
 create table book (
@@ -82,7 +82,7 @@ void canSaveBook() {
     assertThat(savedBook).isEqualTo(bookRepository.findById(savedBook.getId()).get());
 }
 ```
-We'll see an error that looks like `ERROR: null value in column "id" violates not-null constraint`. You'll see this if you haven't defined a way for ids to be generated or defined a default value in the class. In Spring Data JDBC this looks [little different](https://docs.spring.io/spring-data/jdbc/docs/current/reference/html/#jdbc.entity-persistence.id-generation) from what you may have seen in Spring Data JPA. In our case we'll need to define an `ApplicationListener` for a `BeforeSaveEvent`:
+We see an error that looks like `ERROR: null value in column "id" violates not-null constraint`. You see this if you haven't defined a way for ids to be generated or defined a default value in the class. In Spring Data JDBC this looks [little different](https://docs.spring.io/spring-data/jdbc/docs/current/reference/html/#jdbc.entity-persistence.id-generation) from what you may have seen in Spring Data JPA. In our case we need to define an `ApplicationListener` for a `BeforeSaveEvent`:
 
 ```java
 // PersistenceConfig.java
@@ -97,10 +97,10 @@ public ApplicationListener<BeforeSaveEvent> idGenerator() {
 }
 ```
 
-And with that our test will pass because the Id field will now be set. For a full list of supported life cycle events check out the [docs](https://docs.spring.io/spring-data/jdbc/docs/current/reference/html/#jdbc.events).
+And with that our test passes because the Id field is now be set. For a full list of supported life cycle events check out the [docs](https://docs.spring.io/spring-data/jdbc/docs/current/reference/html/#jdbc.events).
 
 ### Query Methods
-One of the features that the Spring Data modules have in common is the ability to define custom Query methods for repositories. Spring data JDBC take a slightly different approach to this. To see this in action we'll define a query method for our `BookRepository`:
+One of the features that the Spring Data modules have in common is the ability to define custom Query methods for repositories. Spring data JDBC take a slightly different approach to this. To see this in action we define a query method for our `BookRepository`:
 
 ```java
 Optional<Book> findByTitle(String title);
@@ -124,13 +124,13 @@ We get a stacktrace with an error that looks something like: `Caused by: java.la
 @Query("select * from Book b where b.title = :title")
 Optional<Book> findByTitle(@Param("title") String title);
 ```
-And now the test passes! You'll need to keep this in mind when defining custom repository methods. 
+And now the test passes! We need to keep this in mind when defining custom repository methods. 
 
 ### Relationships
-Like query methods, Spring Data JDBC also takes a different approach to relationships. Mainly that there is no lazy loading, so if you ever don't want a relationship on an Entity, just leave it off of the class. This comes from the concept that in Domain Driven Design our entities that we'll be fetching are aggregate roots, so by design aggregates should be pulling back other classes.
+Like query methods, Spring Data JDBC also takes a different approach to relationships. Mainly that there is no lazy loading, so if you ever don't want a relationship on an Entity, leave it off of the class. This comes from the concept that in Domain Driven Design our entities that we are fetching are aggregate roots, so by design aggregates should be pulling back other classes.
 
 #### One-to-One
-For One-to-One and One-to-Many relationships, we'll be using the same `@MappedCollection` annotation. First, we'll look at One-to-One relationships. In this case, there will be a `UserAccount` object with a reference to an `Address`. Here's the associated sql:
+For One-to-One and One-to-Many relationships, we use the same `@MappedCollection` annotation. First, welook at One-to-One relationships. In this case, there is be a `UserAccount` object with a reference to an `Address`. Here's the associated sql:
 
 ```sql
 create table address
@@ -191,7 +191,7 @@ void canSaveUserWithAddress() {
 ```
 
 #### One-to-Many
-Here's the sql we'll be using to showcase a One-to-Many relationship:
+Here's the sql we use to showcase a One-to-Many relationship:
 
 ```sql
 create table warehouse
@@ -216,7 +216,7 @@ create table inventory_item
 );
 ```
 
-In this example the `warehouse` has many `inventory_items`. So for the associated `Warehouse` class, we'll use `@MappedCollection` again to reference `InventoryItem`:
+In this example the `warehouse` has many `inventory_items`. So for the associated `Warehouse` class, we use `@MappedCollection` again to reference `InventoryItem`:
 
 ```java
 public class Warehouse {

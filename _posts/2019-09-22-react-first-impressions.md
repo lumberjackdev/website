@@ -8,7 +8,7 @@ summary: Reacting to React
 Recently my adventure into learning new technologies brought me into the world of [React](https://reactjs.org/). For those who know me, this is way outside of my technology comfort zone. I haven't touched a frontend JavaScript framework since AngularJS (no, that's not a typo. It was way before the JS was dropped from the name). Most of my impressions are based on the [tutorial](https://reactjs.org/tutorial/tutorial.html) and reading a few blog posts, so please bear with me if I make a few incorrect assumptions. 
 
 ### New JavaScript Features
-As I mentioned earlier, it's been awhile since I last explored the JavaScript ecosystem. So one of the first things I noticed was that there are a lot of new features in the language. At this point, it felt fairly similar to learning a new language that just had similar syntax to one I already know.
+As I mentioned earlier, it's been awhile since I last explored the JavaScript ecosystem. So one of the first things I noticed was that there are a lot of new features in the language. At this point, it felt fairly similar to learning a new language that had similar syntax to one I already know.
 
 One of the new features I really enjoyed was the arrow function syntax. If you've been living under a rock like me, then here's an example so you know what I mean:
 <pre><code class="language-javascript">// Traditional function syntax
